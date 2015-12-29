@@ -1,0 +1,98 @@
+.breadcrumb{
+    border-radius: 0px;
+}
+.panel{
+    border-radius: 0px;
+}
+.btn{
+    border-radius: 0px;
+}
+.input-sm{
+    border-radius: 0px;
+}
+.form-control{
+    border-radius: 0px;
+}
+#roleauthform-routes label,#assignmentform-permissions label,#authpermissionform-routes label{
+    width:20%;
+    display: inline-block;
+}
+
+.own-panel .nav-pills{
+    margin: -15px -15px 0;
+    background: #FAFAFA none repeat scroll 0% 0%;
+    border-bottom: 1px solid #E4E4E4;
+}
+.own-panel .nav-pills li{
+    margin-left: 0px;
+}
+
+.own-panel .nav-pills > li > a{
+    border: none;
+    border-radius: 0px;
+    border-right: 1px solid #E4E4E4;
+    color: #464646;
+    outline: none;
+}
+
+.own-panel .nav-pills > li.active > a{
+    border-bottom:3px solid #2D6FAB;
+    background:#F6F6F6;
+    background-image:-ms-linear-gradient(top,#F3F3F3,#FFF);
+    background-image:-moz-linear-gradient(top,#F3F3F3,#FFF);
+    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#F3F3F3),color-stop(1,#FFF));
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3F3F3', endColorstr='#FFFFFF', GradientType='0')
+}
+
+.own-panel .nav-pills > li > a:hover{
+    color: #2771B5;
+}
+
+.own-panel .nav-pills > li > a:hover{
+    background-color: #FAFAFA;
+}
+
+.own-panel .nav-pills > li.active > a ,
+.own-panel .nav-pills > li.active > a:hover,
+.own-panel .nav-pills > li.active > a:focus{
+    color: #464646;
+}
+
+.own-panel .panel-heading{
+    position:relative;
+    border-bottom:1px solid #E4E4E4;
+    font-size:14px;
+    overflow:hidden;
+    background:#F3F3F3;
+    background-image:-ms-linear-gradient(top,#F7F7F7,#EAEAEA);
+    background-image:-moz-linear-gradient(top,#F7F7F7,#EAEAEA);
+    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#F7F7F7),color-stop(1,#EAEAEA));
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F7F7F7', endColorstr='#EAEAEA', GradientType='0')
+}
+
+.own-toggle,.own-download{
+    border-left:1px solid #E4E4E4;
+    width:45px;
+    height:45px;
+    position:absolute;
+    left:auto;
+    right:0;
+    top:0;
+    cursor:pointer;
+    -moz-user-focus:ignore;
+    -moz-user-input:disabled;
+    -moz-user-select:none;
+}
+.own-download{
+    right: 46px;
+}
+
+.own-toggle >a,.own-download >a{
+    margin: 10px 15px;
+    text-decoration: none;
+    color: #464646;
+}
+
+.own-panel > .panel-body > .tab-content{
+    min-height: 400px;
+}
