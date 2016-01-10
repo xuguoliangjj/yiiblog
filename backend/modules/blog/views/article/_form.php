@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use xuguoliangjj\ueditor\UEditor;
 
 /* @var $this yii\web\View */
 /* @var $model backend\modules\blog\models\Article */
@@ -14,7 +15,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content')->textarea()->widget(UEditor::className(),[
+        'options'=>[]
+    ]) ?>
 
     <?= $form->field($model, 'create_by')->textInput(['maxlength' => true]) ?>
 

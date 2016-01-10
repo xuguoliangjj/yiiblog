@@ -41,6 +41,15 @@ class BaseController extends Controller
         }
     }
 
+    public function actions()
+    {
+        return [
+          'upload' => [
+              'class' => 'xuguoliangjj\ueditor\UEditorAction'
+          ]
+        ];
+    }
+
     public function beforeAction($action)
     {
         if(Yii::$app->user->isGuest && $this->route != 'site/login')

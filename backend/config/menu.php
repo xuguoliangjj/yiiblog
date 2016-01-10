@@ -8,7 +8,7 @@
 
 return [
     'menu'=>[
-        'fronted'=> ['label'=>'数据统计','items'=>[
+        'fronted'=> ['label'=>'博客分析','items'=>[
                 ['icon'=>'glyphicon glyphicon-user','label' => '玩家分析','items' => [
                     ['label' => '新增玩家', 'url' => ['/main/default']],
                     ['label' => '活跃玩家', 'url' => ['/product/index2']],

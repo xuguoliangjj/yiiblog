@@ -192,7 +192,7 @@ EOD;
      */
     public function requiredTemplates()
     {
-        return ['composer.json', 'AutoloadExample.php', 'README.md'];
+        return ['composer.json', 'Ueditor.php', 'README.md'];
     }
 
     /**
@@ -207,8 +207,8 @@ EOD;
             $this->render("composer.json")
         );
         $files[] = new CodeFile(
-            $modulePath . '/' . $this->packageName . '/AutoloadExample.php',
-            $this->render("AutoloadExample.php")
+            $modulePath . '/' . $this->packageName . '/Ueditor.php',
+            $this->render("Ueditor.php")
         );
         $files[] = new CodeFile(
             $modulePath . '/' . $this->packageName . '/README.md',
