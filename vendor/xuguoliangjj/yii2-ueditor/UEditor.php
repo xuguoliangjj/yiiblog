@@ -25,7 +25,7 @@ class UEditor extends InputWidget
     public function init()
     {
         $this->clientOptions = array_merge([
-            'serverUrl'=>Url::to(['upload'])
+            //'serverUrl'=>Url::to(['upload'])
         ],$this->clientOptions);
         parent::init();
     }
