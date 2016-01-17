@@ -25,7 +25,7 @@ class UEditor extends InputWidget
     public function init()
     {
         $this->clientOptions = array_merge([
-            //'serverUrl'=>Url::to(['upload'])
+            'serverUrl'=>Url::to(['upload'])
         ],$this->clientOptions);
         parent::init();
     }
@@ -48,7 +48,6 @@ class UEditor extends InputWidget
     {
         UEditorAsset::register($this->view);
         $config = Json::encode($this->clientOptions);
-        echo $config;
         $js = <<<EOD
         var editor = UE.getEditor('{$this->options["id"]}',$config);
 EOD;
