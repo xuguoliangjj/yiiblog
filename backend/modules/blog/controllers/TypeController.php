@@ -63,9 +63,9 @@ class TypeController extends BaseController
     public function actionCreate()
     {
         $model = new Type();
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            Yii::$app->session->setFlash('success','新增类别成功');
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,

@@ -24,6 +24,8 @@ use yii\behaviors\TimestampBehavior;
  */
 class Article extends \yii\db\ActiveRecord
 {
+    //文章标签
+    public $tags;
     /**
      * @inheritdoc
      */
@@ -55,7 +57,7 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content','title','type_id','status'],'required'],
+            [['content','title','type_id','status','tags'],'required'],
             [['content'], 'string'],
             [['create_at', 'update_at'], 'safe'],
             [['times', 'status', 'type_id'], 'integer'],
@@ -81,6 +83,7 @@ class Article extends \yii\db\ActiveRecord
             'times' => Yii::t('app', '访问次数'),
             'status' => Yii::t('app', '状态'),
             'type_id' => Yii::t('app', '分类'),
+            'tags' => Yii::t('app', '文章标签'),
         ];
     }
 
@@ -114,4 +117,24 @@ class Article extends \yii\db\ActiveRecord
         }
     }
 
+    public function afterSave($insert, $changedAttributes)
+    {
+        if (!$insert) {
+            Tag::deleteAll(['article_id' => $this->id]);
+        }
+        $tags_arr = explode(',', $this->tags);
+        foreach ($tags_arr as $tag) {
+            $model = new Tag();
+            $model->article_id = $this->id;
+            $model->tag = $tag;
+            $model->save();
+        }
+        parent::afterSave($insert, $changedAttributes);
+    }
+
+    public function beforeDelete()
+    {
+        Tag::deleteAll(['article_id'=>$this->id]);
+        return true;
+    }
 }

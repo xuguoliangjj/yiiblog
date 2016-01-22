@@ -63,7 +63,8 @@ class ArticleController extends BaseController
         $model = new Article();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            Yii::$app->session->setFlash('success','新增了一篇文章：'.$model->title);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -82,7 +83,8 @@ class ArticleController extends BaseController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            Yii::$app->session->setFlash('sucess','修改了一篇文章：'.$model->title);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -99,7 +101,7 @@ class ArticleController extends BaseController
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        Yii::$app->session->setFlash('sucess','删除了一篇文章');
         return $this->redirect(['index']);
     }
 
@@ -113,6 +115,14 @@ class ArticleController extends BaseController
     protected function findModel($id)
     {
         if (($model = Article::findOne($id)) !== null) {
+            $data = $model->getTags()->all();
+            if($data){
+                $tags = [];
+                foreach($data as $row){
+                    $tags[] = $row->tag;
+                }
+                $model->tags = implode(',',$tags);
+            }
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

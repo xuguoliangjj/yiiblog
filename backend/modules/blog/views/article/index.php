@@ -22,12 +22,19 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns'=>[
                 ['attribute'=>'id','label'=>'ID'],
                 ['attribute'=>'title','label'=>'文章标题','filter'=>true],
+                ['attribute'=>'create_by','label'=>'作者','filter'=>true],
                 ['attribute'=>'create_at','label'=>'创建时间','format'=>['date', 'php:Y-m-d H:i:s']],
                 ['attribute'=>'update_at','label'=>'更新时间','format'=>['date', 'php:Y-m-d H:i:s']],
-                ['attribute'=>'status','label'=>'状态','filter'=>[
+                ['attribute'=>'status','format'=>'raw','label'=>'状态','filter'=>[
                     0=>'草稿',
                     1=>'发布'
-                ]],
+                ],'value'=>function($data){
+                    if($data['status']==0){
+                        return '<span class="text-danger">草稿</span>';
+                    }elseif($data['status']==1){
+                        return '<span class="text-success">发布</span>';
+                    }
+                }],
                 ['class' => 'yii\grid\ActionColumn','template' => '{view} {update} {delete}'],
             ]
         ]);

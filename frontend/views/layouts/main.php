@@ -34,12 +34,12 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => '主页', 'url' => ['/site/index']],
-                ['label' => 'PHP', 'url' => ['/site/php']],
-                ['label' => 'Swoole', 'url' => ['/site/about']],
-                ['label' => 'Linux', 'url' => ['/site/about']],
-                ['label' => 'MySQL', 'url' => ['/site/contact']],
-                ['label' => '数据分析', 'url' => ['/site/contact']],
-                ['label' => 'Hadoop', 'url' => ['/site/contact']],
+                ['label' => 'PHP', 'url' => ['/article/index','type'=>'php']],
+                ['label' => 'Swoole', 'url' => ['/article/index','type'=>'swoole']],
+                ['label' => 'Linux', 'url' => ['/article/index','type'=>'linux']],
+                ['label' => 'MySQL', 'url' => ['/article/index','type'=>'mysql']],
+                ['label' => '数据分析', 'url' => ['/article/index','type'=>'data']],
+                ['label' => 'Hadoop', 'url' => ['/article/index','type'=>'hadoop']],
                 ['label' => '关于我', 'url' => ['/site/contact']],
             ];
 //            if (Yii::$app->user->isGuest) {

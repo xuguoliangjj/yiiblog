@@ -28,6 +28,9 @@ use backend\modules\blog\models\Type;
         '0'=>'草稿',
         '1'=>'发布'
     ]) ?>
+
+    <?= $form->field($model, 'tags')->textInput(['placeholder'=>'例如：数据,系统,计算 (英文逗号)']) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', '新建') : Yii::t('app', '修改'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

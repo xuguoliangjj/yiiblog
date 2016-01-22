@@ -29,6 +29,7 @@ class Type extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['tag','name'],'required'],
             [['tag'], 'string', 'max' => 64],
             [['name'], 'string', 'max' => 125]
         ];
