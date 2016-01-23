@@ -62,16 +62,20 @@ AppAsset::register($this);
         <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            'homeLink' => [
+                'label' => '首页',  // required
+                'url' => '/',      // optional, will be processed by Url::to()
+                'template' => "<li>{link}</li>\n", // optional, if not set $this->itemTemplate will be used
+            ]
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
         </div>
     </div>
-
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">Copyright  &copy; 2009-2016 loadata.com</p>
-        <p class="pull-right"><?= Yii::powered() ?> 粤ICP备15101512号</p>
+            <p class="pull-left">Copyright  &copy; 2009-2016 loadata.com</p>
+            <p class="pull-right"><?= Yii::powered() ?> 粤ICP备15101512号</p>
         </div>
     </footer>
 

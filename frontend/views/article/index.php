@@ -1,5 +1,7 @@
 <?php
 /* @var $this yii\web\View */
+$this->title = $type->name;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
 
