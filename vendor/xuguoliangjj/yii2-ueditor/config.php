@@ -49,7 +49,7 @@ return [
     "catcherActionName" => "catchimage", /* 执行抓取远程图片的action名称 */
     "catcherFieldName" => "source", /* 提交的图片列表表单名称 */
     "catcherPathFormat" => "/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
-    "catcherUrlPrefix" => "", /* 图片访问路径前缀 */
+    "catcherUrlPrefix" => "http://img.static.com", /* 图片访问路径前缀 */
     "catcherMaxSize" => 2048000, /* 上传大小限制，单位B */
     "catcherAllowFiles" => [".png", ".jpg", ".jpeg", ".gif", ".bmp"], /* 抓取图片格式显示 */
 
@@ -81,7 +81,7 @@ return [
     "imageManagerActionName" => "listimage", /* 执行图片管理的action名称 */
     "imageManagerListPath" => "/upload/image/", /* 指定要列出图片的目录 */
     "imageManagerListSize" => 20, /* 每次列出文件数量 */
-    "imageManagerUrlPrefix" => "", /* 图片访问路径前缀 */
+    "imageManagerUrlPrefix" => "http://img.static.com", /* 图片访问路径前缀 */
     "imageManagerInsertAlign" => "none", /* 插入的图片浮动方式 */
     "imageManagerAllowFiles" => [".png", ".jpg", ".jpeg", ".gif", ".bmp"], /* 列出的文件类型 */
 
