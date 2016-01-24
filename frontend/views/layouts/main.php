@@ -56,6 +56,19 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
             ]);
+        ?>
+
+        <form class="navbar-form navbar-right" action="" method="post">
+                <div class="input-group">
+                <input class="form-control" name="search" placeholder="Searching..." type="text">
+                <span class="input-group-btn">
+                <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+                </button>
+                </span>
+                </div>
+        </form>
+        <?php
             NavBar::end();
         ?>
 

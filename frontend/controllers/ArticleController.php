@@ -4,9 +4,10 @@ namespace frontend\controllers;
 
 use backend\modules\blog\models\Article;
 use backend\modules\blog\models\Type;
+use frontend\components\BaseController;
 use yii\data\ActiveDataProvider;
 
-class ArticleController extends \yii\web\Controller
+class ArticleController extends BaseController
 {
     public function actionIndex($type)
     {

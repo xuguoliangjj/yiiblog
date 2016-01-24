@@ -29,7 +29,7 @@ $this->title = '第十九层空间的个人博客';
                         <?= \yii\widgets\ListView::widget([
                             'summary'=>'',
                             'itemOptions'=>['class'=>'list-item'],
-                            'dataProvider'=>$dataProvider,
+                            'dataProvider'=>$hot_dataProvider,
                             'itemView'=>'_hot_item'
                         ]) ?>
                     </div>

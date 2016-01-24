@@ -2,6 +2,8 @@
 namespace frontend\controllers;
 
 use backend\modules\blog\models\Article;
+use frontend\components\BaseController;
+use frontend\models\SearchForm;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -19,7 +21,7 @@ use yii\filters\AccessControl;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * @inheritdoc
@@ -76,6 +78,13 @@ class SiteController extends Controller
                 'pageSize' => 20,
             ],
         ]);
+
+        $hot_dataProvider = new ActiveDataProvider([
+            'query' => Article::find([])->orderBy('times desc')->limit(20),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+        ]);
 //        $dataProvider = new ArrayDataProvider([
 //            'allModels'=>[
 //                ['title'=>'LAMP环境搭建'],
@@ -86,7 +95,10 @@ class SiteController extends Controller
 //                ['title'=>'如果那么，那么~~~~~~~~~'],
 //            ]
 //        ]);
-        return $this->render('index',['dataProvider'=>$dataProvider]);
+        return $this->render('index',[
+            'dataProvider'=>$dataProvider,
+            'hot_dataProvider'=>$hot_dataProvider
+        ]);
     }
 
     public function actionLogin()
