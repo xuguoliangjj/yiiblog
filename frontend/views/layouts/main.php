@@ -57,8 +57,7 @@ AppAsset::register($this);
                 'items' => $menuItems,
             ]);
         ?>
-
-        <form class="navbar-form navbar-right" action="" method="post">
+        <form class="navbar-form navbar-left" action="" method="post">
                 <div class="input-group">
                 <input class="form-control" name="search" placeholder="Searching..." type="text">
                 <span class="input-group-btn">
