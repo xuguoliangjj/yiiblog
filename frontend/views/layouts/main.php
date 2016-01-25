@@ -34,10 +34,13 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => '主页', 'url' => ['/site/index']],
-                ['label' => 'PHP', 'url' => ['/article/index','type'=>'php']],
-                ['label' => 'Swoole', 'url' => ['/article/index','type'=>'swoole']],
-                ['label' => 'Linux', 'url' => ['/article/index','type'=>'linux']],
-                ['label' => 'MySQL', 'url' => ['/article/index','type'=>'mysql']],
+                ['label' => 'LNMP', 'items' => [
+                    ['label' => 'PHP', 'url' => ['/article/index','type'=>'php']],
+                    ['label' => 'Swoole', 'url' => ['/article/index','type'=>'swoole']],
+                    ['label' => 'Linux', 'url' => ['/article/index','type'=>'linux']],
+                    ['label' => 'MySQL', 'url' => ['/article/index','type'=>'mysql']]
+                ]],
+                ['label' => 'Yii框架', 'url' => ['/article/index','type'=>'yii']],
                 ['label' => '数据分析', 'url' => ['/article/index','type'=>'data']],
                 ['label' => 'Hadoop', 'url' => ['/article/index','type'=>'hadoop']],
                 ['label' => '关于我', 'url' => ['/site/contact']],
