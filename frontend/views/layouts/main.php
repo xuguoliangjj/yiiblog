@@ -43,6 +43,10 @@ AppAsset::register($this);
                 ['label' => 'Yii框架', 'url' => ['/article/index','type'=>'yii']],
                 ['label' => '数据分析', 'url' => ['/article/index','type'=>'data']],
                 ['label' => 'Hadoop', 'url' => ['/article/index','type'=>'hadoop']],
+                ['label' => '开发工具', 'items' => [
+                    ['label' => 'git', 'url' => ['/article/index','type'=>'svn']],
+                    ['label' => 'svn', 'url' => ['/article/index','type'=>'git']]
+                ]],
                 ['label' => '关于我', 'url' => ['/site/contact']],
             ];
 //            if (Yii::$app->user->isGuest) {
