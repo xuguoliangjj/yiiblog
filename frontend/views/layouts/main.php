@@ -94,7 +94,15 @@ AppAsset::register($this);
     <footer class="footer">
         <div class="container">
             <p class="pull-left">Copyright  &copy; 2009-2016 loadata.com</p>
-            <p class="pull-right"><?= Yii::powered() ?> 粤ICP备15101512号</p>
+            <p class="pull-right"><?= Yii::powered() ?> 粤ICP备15101512号 
+            <span class="pull-right" style="margin-left:5px;">
+	            <script type="text/javascript">
+	            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	            document.write(unescape("%3Cspan id='cnzz_stat_icon_1000217531'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000217531%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+	            </script>
+            </span>
+            </p>
+           
         </div>
     </footer>
 
