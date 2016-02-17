@@ -37,12 +37,19 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => '主页', 'url' => ['/site/index']],
-                ['label' => 'PHP', 'url' => ['/site/php']],
-                ['label' => 'Swoole', 'url' => ['/site/about']],
-                ['label' => 'Linux', 'url' => ['/site/about']],
-                ['label' => 'MySQL', 'url' => ['/site/contact']],
-                ['label' => '数据分析', 'url' => ['/site/contact']],
-                ['label' => 'Hadoop', 'url' => ['/site/contact']],
+                ['label' => 'LNMP', 'items' => [
+                    ['label' => 'PHP', 'url' => ['/article/index','type'=>'php']],
+                    ['label' => 'Swoole', 'url' => ['/article/index','type'=>'swoole']],
+                    ['label' => 'Linux', 'url' => ['/article/index','type'=>'linux']],
+                    ['label' => 'MySQL', 'url' => ['/article/index','type'=>'mysql']]
+                ]],
+                ['label' => 'Yii框架', 'url' => ['/article/index','type'=>'yii']],
+                ['label' => '数据分析', 'url' => ['/article/index','type'=>'data']],
+                ['label' => 'Hadoop', 'url' => ['/article/index','type'=>'hadoop']],
+                ['label' => '开发工具', 'items' => [
+                    ['label' => 'git', 'url' => ['/article/index','type'=>'svn']],
+                    ['label' => 'svn', 'url' => ['/article/index','type'=>'git']]
+                ]],
                 ['label' => '关于我', 'url' => ['/site/contact']],
             ];
 //            if (Yii::$app->user->isGuest) {
@@ -59,22 +66,46 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
             ]);
+        ?>
+        <form class="navbar-form navbar-left" action="" method="post">
+                <div class="input-group">
+                <input class="form-control" name="search" placeholder="Searching..." type="text">
+                <span class="input-group-btn">
+                <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+                </button>
+                </span>
+                </div>
+        </form>
+        <?php
             NavBar::end();
         ?>
 
         <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            'homeLink' => [
+                'label' => '首页',  // required
+                'url' => '/',      // optional, will be processed by Url::to()
+                'template' => "<li>{link}</li>\n", // optional, if not set $this->itemTemplate will be used
+            ]
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
         </div>
     </div>
-
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">Copyright  &copy; 2009-2016 loadata.com</p>
-        <p class="pull-right"><?= Yii::powered() ?> 粤ICP备15101512号</p>
+            <p class="pull-left">Copyright  &copy; 2009-2016 loadata.com</p>
+            <p class="pull-right"><?= Yii::powered() ?> 粤ICP备15101512号 
+            <span class="pull-right" style="margin-left:5px;">
+	            <script type="text/javascript">
+	            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	            document.write(unescape("%3Cspan id='cnzz_stat_icon_1000217531'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000217531%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+	            </script>
+            </span>
+            </p>
+           
         </div>
     </footer>
 

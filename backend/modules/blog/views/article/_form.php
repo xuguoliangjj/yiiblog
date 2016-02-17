@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use xuguoliangjj\ueditor\UEditor;
-
+use yii\helpers\ArrayHelper;
+use backend\modules\blog\models\Type;
 /* @var $this yii\web\View */
 /* @var $model backend\modules\blog\models\Article */
 /* @var $form yii\widgets\ActiveForm */
@@ -13,28 +14,25 @@ use xuguoliangjj\ueditor\UEditor;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'type_id')->dropDownList(
+        ArrayHelper::map(Type::find()->asArray()->all(),'id','name')
+    ) ?>
+
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'content')->textarea()->widget(UEditor::className(),[
         'options'=>[]
     ]) ?>
 
-    <?= $form->field($model, 'create_by')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'status')->dropDownList([
+        '0'=>'草稿',
+        '1'=>'发布'
+    ]) ?>
 
-    <?= $form->field($model, 'update_by')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'create_at')->textInput() ?>
-
-    <?= $form->field($model, 'update_at')->textInput() ?>
-
-    <?= $form->field($model, 'times')->textInput() ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'type_id')->textInput() ?>
+    <?= $form->field($model, 'tags')->textInput(['placeholder'=>'例如：数据,系统,计算 (英文逗号)']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', '新建') : Yii::t('app', '修改'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

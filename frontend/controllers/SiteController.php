@@ -1,6 +1,9 @@
 <?php
 namespace frontend\controllers;
 
+use backend\modules\blog\models\Article;
+use frontend\components\BaseController;
+use frontend\models\SearchForm;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -8,6 +11,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\base\InvalidParamException;
+use yii\data\ActiveDataProvider;
 use yii\data\ArrayDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -17,7 +21,7 @@ use yii\filters\AccessControl;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * @inheritdoc
@@ -68,17 +72,33 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $dataProvider = new ArrayDataProvider([
-            'allModels'=>[
-                ['title'=>'LAMP环境搭建'],
-                ['title'=>'大数据时代'],
-                ['title'=>'如果那么，那么~~~~~~~~~'],
-                ['title'=>'LAMP环境搭建'],
-                ['title'=>'大数据时代'],
-                ['title'=>'如果那么，那么~~~~~~~~~'],
-            ]
+        $dataProvider = new ActiveDataProvider([
+            'query' => Article::find([])->orderBy('create_at desc')->limit(20),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
         ]);
-        return $this->render('index',['dataProvider'=>$dataProvider]);
+
+        $hot_dataProvider = new ActiveDataProvider([
+            'query' => Article::find([])->orderBy('times desc')->limit(20),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+        ]);
+//        $dataProvider = new ArrayDataProvider([
+//            'allModels'=>[
+//                ['title'=>'LAMP环境搭建'],
+//                ['title'=>'大数据时代'],
+//                ['title'=>'如果那么，那么~~~~~~~~~'],
+//                ['title'=>'LAMP环境搭建'],
+//                ['title'=>'大数据时代'],
+//                ['title'=>'如果那么，那么~~~~~~~~~'],
+//            ]
+//        ]);
+        return $this->render('index',[
+            'dataProvider'=>$dataProvider,
+            'hot_dataProvider'=>$hot_dataProvider
+        ]);
     }
 
     public function actionLogin()

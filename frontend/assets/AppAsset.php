@@ -19,8 +19,12 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'js/highlight/styles/monokai.css',
+        'js/SyntaxHighlighter/shCoreDefault.css'
     ];
     public $js = [
+        'js/SyntaxHighlighter/shCore.js',
+        'js/main.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
