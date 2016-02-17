@@ -11,7 +11,9 @@ use \yii\helpers\Html;
 <?php $form = ActiveForm::begin(['id' => 'create-route-form']); ?>
     <div class="form-group">
         <?= $form->field($model,'name')?>
-        <?= $form->field($model,'className')->textarea()?>
+        <?= $form->field($model,'className')->textarea()->widget(\xuguoliangjj\ueditor\UEditor::className(),[
+            'options'=>[]
+        ])?>
         <?= Html::submitButton('添加',
             ['class' => 'btn btn-success btn-sm']) ?>
     </div>

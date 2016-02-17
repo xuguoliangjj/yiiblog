@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = '第十九层空间的个人博客';
+$this->title = '第十九层空间 - 个人博客 + 技术博客 + 技术分享';
 ?>
 <div class="site-index">
     <div class="jumbotron">

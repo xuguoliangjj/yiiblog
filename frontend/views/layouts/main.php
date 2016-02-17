@@ -17,6 +17,9 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="第十九层空间,个人博客,技术博客,技术讨论,技术交流,技术文章 + 技术分享 + 学习技术" />
+    <meta name="keywords" content="第十九层空间,个人博客,技术交流,大数据,lnmp,技术架构,文章分享,文章交流,文章搜索" />
+    <meta name="author" content="loadata.com" />
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
