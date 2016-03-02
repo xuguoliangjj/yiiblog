@@ -9,7 +9,7 @@ namespace xuguoliangjj\ueditor;
 
 use yii\web\AssetBundle;
 
-class UeditorAsset extends AssetBundle
+class UEditorAsset extends AssetBundle
 {
     public $sourcePath = '@xuguoliangjj/ueditor/assets';
 
