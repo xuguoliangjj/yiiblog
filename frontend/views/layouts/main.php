@@ -43,6 +43,7 @@ AppAsset::register($this);
                     ['label' => 'Linux', 'url' => ['/article/index','type'=>'linux']],
                     ['label' => 'MySQL', 'url' => ['/article/index','type'=>'mysql']]
                 ]],
+				['label' => 'Web架构', 'url' => ['/article/index','type'=>'web']],
                 ['label' => 'Yii框架', 'url' => ['/article/index','type'=>'yii']],
                 ['label' => '数据分析', 'url' => ['/article/index','type'=>'data']],
                 ['label' => 'Hadoop', 'url' => ['/article/index','type'=>'hadoop']],
