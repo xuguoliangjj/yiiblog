@@ -36,11 +36,11 @@ $this->params['breadcrumbs'][] = $this->title;
      <!-- JiaThis Button END -->
     </div>
 
-    <div class="row">
+    <div class="article-view">
         <?= $model->content?>
     </div>
 
-    <div class="row">
+    <div class="article-comment">
     <!-- UY BEGIN -->
     <div id="uyan_frame"></div>
     <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2036982"></script>
