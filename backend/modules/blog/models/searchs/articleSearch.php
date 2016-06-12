@@ -68,7 +68,7 @@ class articleSearch extends Article
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'create_by', $this->create_by])
             ->andFilterWhere(['like', 'update_by', $this->update_by]);
-
+        $query->addOrderBy(['id'=>SORT_DESC]);
         return $dataProvider;
     }
 }
