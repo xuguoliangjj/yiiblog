@@ -4,7 +4,7 @@ $this->title = '第十九层空间 - 个人博客 + 技术博客 + 技术分享'
 ?>
 <div class="site-index">
     <div class="jumbotron">
-        <h2>欢迎进入我的博客</h2>
+        <h2>Welcome to my blog!</h2>
     </div>
     <div class="body-content">
         <div class="row">
